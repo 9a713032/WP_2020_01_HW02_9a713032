@@ -77,17 +77,17 @@ namespace WP_2020_01_HW02_9a713032
 
         private void btnDraw_Click(object sender, EventArgs e)
         {
-            Poker p = new Poker();
+         
             List<int> poker = GetPoker(52);
 
             string msg = "";
             for (int i = 0; i < 1; i++)
             {
                 msg += $"{poker[i] + 1 } ";
-
             }
-            rtb.Text += msg + "\n";
             picResult.Image = list[poker[0]];
+            rtb.Text += msg + "\n";
+
         }
 
         private List<int> GetPoker(int count)
@@ -102,9 +102,9 @@ namespace WP_2020_01_HW02_9a713032
                 }
 
                 //模擬發牌
-                for (int i = count - 2; i > 0; i--)
+                for (int i = count-2 ; i > 0; i--)
                 {
-                    int lastIndex = i + 1;                    //方便閱讀
+                    int lastIndex = i;                    //方便閱讀
                     int randomIndex = (new Random()).Next(i); //抽牌
 
                     //交換
